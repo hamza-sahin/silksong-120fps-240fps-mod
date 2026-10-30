@@ -1,0 +1,14 @@
+// Hollow Knight: Silksong 240 FPS for Eden (swap interval 400)
+// Game: 010013C00E930000, update v1.0.28324, main build id DC3E4B892043EF2345C3EAF97A177E7C
+@nsobid-DC3E4B892043EF2345C3EAF97A177E7C
+
+@flag offset_shift 0x100
+
+@enabled
+// window builder: ldr w1,[x21,#0x6f8] -> mov w1,#400 (initial NVN present interval)
+0120AF34 01328052
+// interval setter: add x8,x8,#0xc40 / ldr x2,[x8] -> ldr x2,[x8,#0xc40] (frees a slot)
+011F27A8 022146F9
+// interval setter: -> mov w1,#400 (always hand 400 to nvnWindowSetPresentInterval)
+011F27AC 01328052
+@stop

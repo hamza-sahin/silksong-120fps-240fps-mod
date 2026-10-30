@@ -1,0 +1,15 @@
+# Never commit game files or keys
+*.nsp
+*.xci
+*.nca
+*.nso
+*.bin
+*.keys
+*.tik
+main
+main.npdm
+rtld
+sdk
+subsdk*
+update_exefs/
+__pycache__/
